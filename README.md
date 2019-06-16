@@ -6,7 +6,6 @@ Created using Expo
 `npm install`
 `npm start`
 
-
 # Tools Used
 - `Node.js` - An open-source, cross-platform JavaScript runtime environment
 - `npm` - A package manager for JavaScript
@@ -16,7 +15,7 @@ React Native: Code is written in JavaScript and React Native compiles that into 
 
 # React Native Stuff
 ## Components
-https://reactjs.org/docs/react-component.html
+Documentation here: https://reactjs.org/docs/react-component.html
 This is how we display things on our screen.
 These are the building blocks of our applications, and contain the logic and markup we wish to display.
 These can be reused throughout our application.
@@ -63,7 +62,7 @@ Props are being used to determine:
 - The onPress method for the button `this.props.onPress`
 - The text on the button `this.props.buttonText`
 If the parent doesn't specify one of these, then it just wont be defined (ie. the button won't do anything onPress)
-Read more here: https://facebook.github.io/react-native/docs/props
+Documentation here: https://facebook.github.io/react-native/docs/props
 
 ## Navigation
 - Use the bottomTabNavigator from react-navigation.
@@ -73,7 +72,7 @@ Read more here: https://facebook.github.io/react-native/docs/props
 For example:
 ```<Button title="Login" onPress={() => this.props.navigation.navigate("main")}/>```
 This will create a button, which, on press, will call a function which changes the screen. In this case, the object is accessing the `navigation` prop, and invoking the `navigate` method. "Main" is the title of the screen which we wish to navigate to (which is defined by the switch, tab, stack, navigator).
-See here: https://reactnavigation.org/docs/en/navigation-prop.html
+Documentation here: https://reactnavigation.org/docs/en/navigation-prop.html
 
 # Specific Components
 ## Map
@@ -84,12 +83,13 @@ The map component is one provided by expo. The actual component is made by AirBn
 Currently Providers and Consumers are used for storing info to be used across screens.
 `TODO`: Look into using Redux for storing information.
 
-## Text stuff
+## Text and fonts
 React Native has slightly limited way to customise fonts. 
 The `fontFamily` property in React Native StyleSheets also only takes a single font name, whereas the `font-family` in CSS can take multiple fonts.
-Also, if you want to use custom fonts (which is basically most fonts), you have to load the fonts in yourself. Read about here: https://docs.expo.io/versions/latest/guides/using-custom-fonts/
+Also, if you want to use custom fonts (which is basically most fonts), you have to load the fonts in yourself. 
+Documentation here: https://docs.expo.io/versions/latest/guides/using-custom-fonts/
 
-There's also some issues with inheritance of fonts across components. Read about fonts here: https://facebook.github.io/react-native/docs/text.html
+There's also some issues with inheritance of fonts across components. Documentation about fonts here: https://facebook.github.io/react-native/docs/text.html
 
 ## Recordings
 - Recording 3: https://drive.google.com/open?id=1txfSOYJ0SEISZIXSrjn2yHym3fSo0yDt
