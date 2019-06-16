@@ -92,6 +92,6 @@ Also, if you want to use custom fonts (which is basically most fonts), you have 
 There's also some issues with inheritance of fonts across components. Read about fonts here: https://facebook.github.io/react-native/docs/text.html
 
 ## Recordings
-Recording 3: https://drive.google.com/open?id=1txfSOYJ0SEISZIXSrjn2yHym3fSo0yDt
-Recording 2: https://drive.google.com/file/d/166PVgKSbP_xCqKVHsF-P9zq1hVSBcyDz/view
-Recording 1: https://drive.google.com/open?id=1tCGRYzMrdPTV6VOKEscXOZvNNioi_KrM
+- Recording 3: https://drive.google.com/open?id=1txfSOYJ0SEISZIXSrjn2yHym3fSo0yDt
+- Recording 2: https://drive.google.com/file/d/166PVgKSbP_xCqKVHsF-P9zq1hVSBcyDz/view
+- Recording 1: https://drive.google.com/open?id=1tCGRYzMrdPTV6VOKEscXOZvNNioi_KrM
