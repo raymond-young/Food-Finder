@@ -46,7 +46,7 @@ You can’t access state directly. You have to use a setState() function which i
 -	When a component is created (initialised) its parents may pass parameters or data onto children, and the children can use this information. The children determine how the information is used.
 -	Similar to State, except that State is internal to a component, while props are passed to a component.
 
-- For example, here is a definition for a button:
+For example, here is a definition for a button:
 ```
 export class MaterialButton extends React.Component {
     render() {
