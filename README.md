@@ -1,11 +1,10 @@
 # Workshop 4 Application
 Created using Expo
 
-Redux for storing information to be used across screens
-
+# Start
 
 `npm install`
-`expo start`
+`npm start`
 
 
 # Tools Used
@@ -17,6 +16,7 @@ React Native: Code is written in JavaScript and React Native compiles that into 
 
 # React Native Stuff
 ## Components
+https://reactjs.org/docs/react-component.html
 This is how we display things on our screen.
 These are the building blocks of our applications, and contain the logic and markup we wish to display.
 These can be reused throughout our application.
@@ -63,7 +63,7 @@ Props are being used to determine:
 - The onPress method for the button `this.props.onPress`
 - The text on the button `this.props.buttonText`
 If the parent doesn't specify one of these, then it just wont be defined (ie. the button won't do anything onPress)
-
+Read more here: https://facebook.github.io/react-native/docs/props
 
 ## Navigation
 - Use the bottomTabNavigator from react-navigation.
@@ -80,13 +80,19 @@ See here: https://reactnavigation.org/docs/en/navigation-prop.html
 The map component is one provided by expo. The actual component is made by AirBnb and they made it open source, and it uses an implementation of Google maps. This is only possible in expo, and there's a bunch of components available through expo because of it.
 - By default, the MapView takes up the space of the View. If you don't specify the dimensions of a View, it will by default take up the space of the child. Specify the flex in the style to change the dimensions of the view.
 
+## Swiping
+Currently Providers and Consumers are used for storing info to be used across screens.
+`TODO`: Look into using Redux for storing information.
 
+## Text stuff
+React Native has slightly limited way to customise fonts. 
+The `fontFamily` property in React Native StyleSheets also only takes a single font name, whereas the `font-family` in CSS can take multiple fonts.
+Also, if you want to use custom fonts (which is basically most fonts), you have to load the fonts in yourself. Read about here: https://docs.expo.io/versions/latest/guides/using-custom-fonts/
+
+There's also some issues with inheritance of fonts across components. Read about fonts here: https://facebook.github.io/react-native/docs/text.html
 
 # Devs
-
-The DEVS Workshop Series walks through building an application using React Native but through a practical **product-based** mindset. The recordings are available below.
-
-A big thank you to everyone who participated!
+The DEVS Workshop Series walks through building an application using React Native but through a practical **product-based** mindset.
 
 # Pre-requisites/Instructions 
 
