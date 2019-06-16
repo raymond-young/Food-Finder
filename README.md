@@ -1,4 +1,4 @@
-# workshop 4
+# Workshop 4 Application
 Created using Expo
 
 Redux for storing information to be used across screens
