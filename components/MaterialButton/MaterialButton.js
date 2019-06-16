@@ -14,7 +14,7 @@ export class MaterialButton extends React.Component {
     render() {
         return (
             <TouchableOpacity style={[this.props.buttonStyles, styles.buttonContainer]} onPress={this.props.onPress}>
-                <Text style={styles.buttonText}>{this.props.buttonText}</Text>
+                <Text style={[this.props.buttonTextStyles, styles.buttonText]}>{this.props.buttonText}</Text>
             </TouchableOpacity>
         );
     }
