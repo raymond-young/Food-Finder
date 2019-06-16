@@ -1,5 +1,5 @@
 # Workshop 4 Application
-Created using Expo
+React Native project created using Expo
 
 # Start
 
@@ -39,7 +39,7 @@ How to use:
 You can’t access state directly. You have to use a setState() function which is built into react-native.
 
 ## Props
--	So the whole point of defining components is so you can reuse the same components in multiple places. You might have a nicely styled button that you want to use throughout your app. How do you then make the buttons do different things? With props (properties).
+So the whole point of defining components is so you can reuse the same components in multiple places. You might have a nicely styled button that you want to use throughout your app. How do you then make the buttons do different things? With props (properties).
 - This is information that is passed to a single component which tells it how it should behave. (Props can be anything from a function, to a string, or whatever. It’s just a piece of data that is used by a component).
 -	Data only flows in one direction in React Native, from parent to child.
 -	When a component is created (initialised) its parents may pass parameters or data onto children, and the children can use this information. The children determine how the information is used.
@@ -61,7 +61,7 @@ Props are being used to determine:
 - The style of the button `this.props.buttonStyles`
 - The onPress method for the button `this.props.onPress`
 - The text on the button `this.props.buttonText`
-If the parent doesn't specify one of these, then it just wont be defined (ie. the button won't do anything onPress)
+If the parent doesn't specify one of these, then that attribute just wont be defined (e.g. the button won't do anything onPress)
 Documentation here: https://facebook.github.io/react-native/docs/props
 
 ## Navigation
@@ -83,7 +83,7 @@ The map component is one provided by expo. The actual component is made by AirBn
 Currently Providers and Consumers are used for storing info to be used across screens.
 `TODO`: Look into using Redux for storing information.
 
-## Text and fonts
+## Text and custom fonts
 React Native has slightly limited way to customise fonts. 
 The `fontFamily` property in React Native StyleSheets also only takes a single font name, whereas the `font-family` in CSS can take multiple fonts.
 Also, if you want to use custom fonts (which is basically most fonts), you have to load the fonts in yourself. 

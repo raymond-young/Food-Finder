@@ -14,6 +14,7 @@ export default StyleSheet.create({
     headerText: {
         color: "#FFF",
         marginTop: 20,
+        fontSize: 30
         // fontFamily: "open-sans-bold",
         // Trebuchet MS,Arial,sans-serif
     },
