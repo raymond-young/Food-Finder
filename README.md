@@ -59,9 +59,9 @@ export class MaterialButton extends React.Component {
 }
 ```
 Props are being used to determine:
-- The style of the button (this.props.buttonStyles)
-- The onPress method for the button (this.props.onPress)
-- The text on the button (this.props.buttonText)
+- The style of the button `this.props.buttonStyles`
+- The onPress method for the button `this.props.onPress`
+- The text on the button `this.props.buttonText`
 If the parent doesn't specify one of these, then it just wont be defined (ie. the button won't do anything onPress)
 
 
@@ -75,11 +75,11 @@ For example:
 This will create a button, which, on press, will call a function which changes the screen. In this case, the object is accessing the `navigation` prop, and invoking the `navigate` method. "Main" is the title of the screen which we wish to navigate to (which is defined by the switch, tab, stack, navigator).
 See here: https://reactnavigation.org/docs/en/navigation-prop.html
 
-
+# Specific Components
 ## Map
-The map components is actually provided by expo. The actual component is made by AirBnb and made it open source, and it uses an implementation of Google maps. This is only possible in expo, and there's a bunch of components available through expo because of it.
+The map component is one provided by expo. The actual component is made by AirBnb and they made it open source, and it uses an implementation of Google maps. This is only possible in expo, and there's a bunch of components available through expo because of it.
 - By default, the MapView takes up the space of the View. If you don't specify the dimensions of a View, it will by default take up the space of the child. Specify the flex in the style to change the dimensions of the view.
-- 
+
 
 
 # Devs
