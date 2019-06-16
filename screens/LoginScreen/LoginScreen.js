@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView } from "react-native";
 import styles from "./LoginScreen.styles";
 import { MaterialButton } from "../../components/MaterialButton/MaterialButton";
+import { Button } from "react-native-elements";
+
 
 export class LoginScreen extends React.Component {
     render() {
@@ -13,9 +15,9 @@ export class LoginScreen extends React.Component {
                 </View> 
                 <View style={styles.formContainer}>
                     <MaterialButton buttonStyles={{borderRadius:50, marginBottom: 20}} buttonText="LOGIN WITH FACEBOOK"/>                      
-                    <TextInput placeholder="username" placeholderTextColor="#FFF" style={styles.inputContainer}/>
-                    <TextInput placeholder="password" secureTextEntry={true} placeholderTextColor="#FFF" style={styles.inputContainer}/>                    
-                    <MaterialButton buttonText="SIGN IN" />
+                    <TextInput placeholder="Username" placeholderTextColor="#FFF" style={styles.inputContainer}/>
+                    <TextInput placeholder="Password" secureTextEntry={true} placeholderTextColor="#FFF" style={styles.inputContainer}/>                    
+                    <MaterialButton buttonText="SIGN IN" onPress={() => this.props.navigation.navigate("main")}/>
                 </View>
             </KeyboardAvoidingView>
         )

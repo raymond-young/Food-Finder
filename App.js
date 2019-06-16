@@ -17,7 +17,7 @@ const MainNavigator = createSwitchNavigator({
   auth: LoginScreen,
   main: TabNavigator
 }, {
-  initialRouteName: "main"
+  initialRouteName: "auth"
 })
 
 const AppContainer = createAppContainer(MainNavigator);
