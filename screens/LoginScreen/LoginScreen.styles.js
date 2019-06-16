@@ -13,7 +13,9 @@ export default StyleSheet.create({
     },
     headerText: {
         color: "#FFF",
-        marginTop: 20
+        marginTop: 20,
+        // fontFamily: "open-sans-bold",
+        // Trebuchet MS,Arial,sans-serif
     },
     formContainer: {
         flex: 3,
