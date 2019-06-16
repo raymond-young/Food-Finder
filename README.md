@@ -1,4 +1,4 @@
-# Swipe application
+# workshop 4
 Created using Expo
 
 Redux for storing information to be used across screens
@@ -15,7 +15,7 @@ Redux for storing information to be used across screens
 
 React Native: Code is written in JavaScript and React Native compiles that into Java, Objective C or Swift Code depending on the environment.
 
-# Things
+# React Native Stuff
 ## Components
 This is how we display things on our screen.
 These are the building blocks of our applications, and contain the logic and markup we wish to display.
@@ -41,10 +41,29 @@ You can’t access state directly. You have to use a setState() function which i
 
 ## Props
 -	So the whole point of defining components is so you can reuse the same components in multiple places. You might have a nicely styled button that you want to use throughout your app. How do you then make the buttons do different things? With props (properties).
--	This is information that is passed to a single component which tells it how it should behave. (Props can be anything from a function, to a string, or whatever. It’s just a piece of data that is used by a component).
--	Data only flow sin one direction in React Native, from parent to child.
--	Parents will pass parameters or data onto children, and the children can use this information.
+- This is information that is passed to a single component which tells it how it should behave. (Props can be anything from a function, to a string, or whatever. It’s just a piece of data that is used by a component).
+-	Data only flows in one direction in React Native, from parent to child.
+-	When a component is created (initialised) its parents may pass parameters or data onto children, and the children can use this information. The children determine how the information is used.
 -	Similar to State, except that State is internal to a component, while props are passed to a component.
+
+- For example, here is a definition for a button:
+```
+export class MaterialButton extends React.Component {
+    render() {
+        return (
+            <TouchableOpacity style={[this.props.buttonStyles]} onPress={this.props.onPress}>
+                <Text>{this.props.buttonText}</Text>
+            </TouchableOpacity>
+        );
+    }
+}
+```
+Props are being used to determine:
+- The style of the button (this.props.buttonStyles)
+- The onPress method for the button (this.props.onPress)
+- The text on the button (this.props.buttonText)
+If the parent doesn't specify one of these, then it just wont be defined (ie. the button won't do anything onPress)
+
 
 ## Navigation
 - Use the bottomTabNavigator from react-navigation.
