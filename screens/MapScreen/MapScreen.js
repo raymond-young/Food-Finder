@@ -50,6 +50,10 @@ export class MapScreen extends React.Component {
           region={this.state.region}
           onRegionChangeComplete={this.onRegionChangeComplete}
         />
+        <Button 
+        title="Back"
+        onPress={() => this.props.navigation.navigate("auth")}
+        />
         <View style={styles.buttonContainer}>
           <AppContext.Consumer>
             {({ addResults }) => {

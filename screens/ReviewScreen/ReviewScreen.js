@@ -7,6 +7,10 @@ import { MapView } from "expo";
 
 export class ReviewScreen extends React.Component {
   renderLikedJobs = likedJobs => {
+    if (likedJobs.length <= 0) {
+      return this.renderNoMoreCards();
+    }
+
     return likedJobs.map(job => {
       const { company, created_at, url, title, id } = job;
 
@@ -45,6 +49,22 @@ export class ReviewScreen extends React.Component {
       );
     });
   };
+
+  renderNoMoreCards = () => {
+    return (
+      <Card title="No more jobs!">
+        <Button
+          title="Back To Map"
+          icon={{ name: "my-location", color: "white" }}
+          buttonStyle={{ backgroundColor: "#E43F3F", height: 50 }}
+          onPress={() => {
+            this.props.navigation.navigate("map");
+          }}
+        />
+      </Card>
+    );
+  }
+
   render() {
     return (
       <ScrollView>
