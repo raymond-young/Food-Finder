@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { MapView } from "expo";
 import { Button } from "react-native-elements";
-import styles from "./MapScreen.styles";
+import styles from "./MapScreenFood.styles";
 import axios from "axios";
 import { AppContext } from "../../AppProvider";
 
@@ -13,7 +13,7 @@ const initialRegion = {
   latitudeDelta: 0.09
 };
 
-export class MapScreen extends React.Component {
+export class MapScreenFood extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,21 +32,21 @@ export class MapScreen extends React.Component {
     const longitude = this.state.region.longitude;
 
     try {
-      const response = await axios.get(
-        `https://jobs.github.com/positions.json?lat=${latitude}&long=${longitude}`
-      );
-      const jobs = response.data.slice(0, 10);
-      return jobs;
-      // const response = await axios({
-      //   method: 'get',
-      //   url: 'https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972',
-      //   headers: {
-      //     Authorization: 'Bearer uEHV6xfRo8t08Mbssj-ISPyjjW5SAY3zBdcKBfJD_48V6vbZmdrceEQTAWgVhCVGvDNGsrXnGh2jgOeKe-oLWla_22118nZBWSG4BmLWtQIVEHUNlmG-4LAUkekGXXYx',
-      //   },
-      // });
-      // console.log(response.data.businesses.slice(0, 2));
-      // const jobs = response.data.businesses.slice(0, 2);
+      // const response = await axios.get(
+      //   `https://jobs.github.com/positions.json?lat=${latitude}&long=${longitude}`
+      // );
+      // const jobs = response.data.slice(0, 10);
       // return jobs;
+      const response = await axios({
+        method: 'get',
+        url: 'https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972',
+        headers: {
+          Authorization: 'Bearer uEHV6xfRo8t08Mbssj-ISPyjjW5SAY3zBdcKBfJD_48V6vbZmdrceEQTAWgVhCVGvDNGsrXnGh2jgOeKe-oLWla_22118nZBWSG4BmLWtQIVEHUNlmG-4LAUkekGXXYx',
+        },
+      });
+      console.log(response.data.businesses.slice(0, 2));
+      const jobs = response.data.businesses.slice(0, 2);
+      return jobs;
     } catch (err) {
       console.log(err);
     }
