@@ -39,13 +39,13 @@ export class MapScreenFood extends React.Component {
       // return jobs;
       const response = await axios({
         method: 'get',
-        url: 'https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972',
+        url: 'https://api.yelp.com/v3/businesses/search?term=delis&latitude='+latitude+'&longitude='+longitude,
         headers: {
           Authorization: 'Bearer uEHV6xfRo8t08Mbssj-ISPyjjW5SAY3zBdcKBfJD_48V6vbZmdrceEQTAWgVhCVGvDNGsrXnGh2jgOeKe-oLWla_22118nZBWSG4BmLWtQIVEHUNlmG-4LAUkekGXXYx',
         },
       });
-      console.log(response.data.businesses.slice(0, 2));
-      const jobs = response.data.businesses.slice(0, 2);
+      const jobs = response.data.businesses.slice(0, 10);
+      console.log(jobs);
       return jobs;
     } catch (err) {
       console.log(err);
@@ -69,7 +69,7 @@ export class MapScreenFood extends React.Component {
             {({ addResults }) => {
               return (
                 <Button
-                  title="Find Jobs"
+                  title="Find Food"
                   buttonStyle={styles.buttonStyles}
                   onPress={async () => {
                       const jobs = await this.fetchJobs();
