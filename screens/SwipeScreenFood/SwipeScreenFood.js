@@ -115,7 +115,7 @@ export class SwipeScreenFood extends React.Component {
 
   renderNoMoreCards = () => {
     return (
-      <Card title="No more jobs!">
+      <Card title="No more restaurants!">
         <Button
           title="Back To Map"
           icon={{ name: "my-location", color: "white" }}

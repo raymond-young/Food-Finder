@@ -6,13 +6,14 @@ import { MapScreenFood } from "./screens/MapScreenFood/MapScreenFood";
 import { SwipeScreen } from "./screens/SwipeScreen/SwipeScreen";
 import { SwipeScreenFood } from "./screens/SwipeScreenFood/SwipeScreenFood";
 import { ReviewScreen } from "./screens/ReviewScreen/ReviewScreen";
+import { ReviewScreenFood } from "./screens/ReviewScreenFood/ReviewScreenFood";
 import { createBottomTabNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { AppProvider } from './AppProvider';
 
 const TabNavigator = createBottomTabNavigator({
   map: MapScreenFood,
   swipe: SwipeScreenFood,
-  review: ReviewScreen
+  review: ReviewScreenFood
 });
 
 const MainNavigator = createSwitchNavigator({
