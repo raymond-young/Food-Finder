@@ -81,7 +81,6 @@ The map component is one provided by expo. The actual component is made by AirBn
 
 ## Swiping
 Currently Providers and Consumers are used for storing info to be used across screens.
-`TODO`: Look into using Redux for storing information.
 
 ## Text and custom fonts
 React Native has slightly limited way to customise fonts. 
@@ -91,7 +90,20 @@ Documentation here: https://docs.expo.io/versions/latest/guides/using-custom-fon
 
 There's also some issues with inheritance of fonts across components. Documentation about fonts here: https://facebook.github.io/react-native/docs/text.html
 
+## Images
+Any images which have a source uri need to have a defined width and height. Local images don't need this definition.
+Documentation here: https://facebook.github.io/react-native/docs/image.html
+
 ## Recordings
 - Recording 3: https://drive.google.com/open?id=1txfSOYJ0SEISZIXSrjn2yHym3fSo0yDt
 - Recording 2: https://drive.google.com/file/d/166PVgKSbP_xCqKVHsF-P9zq1hVSBcyDz/view
 - Recording 1: https://drive.google.com/open?id=1tCGRYzMrdPTV6VOKEscXOZvNNioi_KrM
+
+# TODO:
+- Styling of the bottom tab (add icons)
+- Restyling of the Login page (potentially separate the food login from the Job login)
+- Change any stray references to 'Job' to 'Restaurant' or 'Food' where appropriate.
+- Refactoring to have the Review, Swipe, and Map screens inherit from a parent class.
+- Look into using Redux for storing information.
+- Move Yelp auth to an environment file.
+
