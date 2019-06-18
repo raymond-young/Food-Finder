@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { LoginScreen } from "./screens/LoginScreen/LoginScreen";
+import { LoginScreenFood } from "./screens/LoginScreenFood/LoginScreenFood";
 import { MapScreen } from "./screens/MapScreen/MapScreen";
 import { MapScreenFood } from "./screens/MapScreenFood/MapScreenFood";
 import { SwipeScreen } from "./screens/SwipeScreen/SwipeScreen";
@@ -17,7 +18,7 @@ const TabNavigator = createBottomTabNavigator({
 });
 
 const MainNavigator = createSwitchNavigator({
-  auth: LoginScreen,
+  auth: LoginScreenFood,
   main: TabNavigator
 }, {
   initialRouteName: "auth"

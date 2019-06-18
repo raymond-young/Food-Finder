@@ -106,4 +106,5 @@ Documentation here: https://facebook.github.io/react-native/docs/image.html
 - Refactoring to have the Review, Swipe, and Map screens inherit from a parent class.
 - Look into using Redux for storing information.
 - Move Yelp auth to an environment file.
+- Allow searches to be customisable by user input.
 
