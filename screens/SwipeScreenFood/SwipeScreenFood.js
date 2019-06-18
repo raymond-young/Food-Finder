@@ -2,11 +2,17 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 import { AppContext } from "../../AppProvider";
 import Swiper from "../../components/Swiper/Swiper";
-import { Card, Button } from "react-native-elements";
+import { Card, Button, Icon } from "react-native-elements";
 import { MapView } from "expo";
 import HTML from "react-native-render-html";
 
 export class SwipeScreenFood extends React.Component {
+  static navigationOptions = {
+    title: "Jobs",
+    tabBarIcon: ({tintColor}) => {
+      return <Icon name="description" size={25} color={tintColor}/>
+    }
+  }
   formatAddress = location => {
     var address= ""; 
     for (line in location.display_address) {

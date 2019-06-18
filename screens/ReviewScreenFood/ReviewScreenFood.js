@@ -2,10 +2,16 @@ import React from "react";
 import { View, Text, Linking, Image } from "react-native";
 import { AppContext } from "../../AppProvider";
 import { ScrollView } from "react-native-gesture-handler";
-import { Card, Button } from "react-native-elements";
+import { Card, Button, Icon } from "react-native-elements";
 import { MapView } from "expo";
 
 export class ReviewScreenFood extends React.Component {
+  static navigationOptions = {
+    title: "Review",
+    tabBarIcon: ({ tintColor }) => {
+      return <Icon name="favorite" size={25} color={tintColor} />;
+    }
+  }
   renderLikedJobs = likedJobs => {
     if (likedJobs.length <= 0) {
       return this.renderNoMoreCards();

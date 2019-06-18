@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { MapView } from "expo";
-import { Button } from "react-native-elements";
+import { Button, Icon } from "react-native-elements";
 import styles from "./MapScreenFood.styles";
 import axios from "axios";
 import { AppContext } from "../../AppProvider";
@@ -14,6 +14,12 @@ const initialRegion = {
 };
 
 export class MapScreenFood extends React.Component {
+  static navigationOptions = {
+    title: "Map",
+    tabBarIcon: ({ tintColor }) => {
+      return <Icon name="my-location" size={25} color={tintColor} />;
+    }
+  }
   constructor(props) {
     super(props);
     this.state = {
