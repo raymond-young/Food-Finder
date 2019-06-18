@@ -12,6 +12,6 @@ export default StyleSheet.create({
   buttonStyles: {
       borderRadius: 50,
       height: 60,
-      backgroundColor: "#E43F3F"
+      backgroundColor: "#87AFC7"
   }
 });

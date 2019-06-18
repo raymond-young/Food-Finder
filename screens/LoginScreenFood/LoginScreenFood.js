@@ -34,15 +34,12 @@ export class LoginScreenFood extends React.Component {
                     }
                 </View> 
                 <View style={styles.formContainer}>
-                    {/* <MaterialButton buttonStyles={{borderRadius:50, marginBottom: 20}} buttonText="LOGIN WITH FACEBOOK"/>                       */}
                     <TextInput placeholder="e.g. delis" placeholderTextColor="#FFF" style={styles.inputContainer}/>
-                    {/* <TextInput placeholder="Password" secureTextEntry={true} placeholderTextColor="#FFF" style={styles.inputContainer}/>                     */}
                     {
                         this.state.fontLoaded ? (
                             <MaterialButton buttonText="Search" buttonStyles={{fontFamily: 'open-sans-bold'}} onPress={() => this.props.navigation.navigate("main")}/>
                         ) : <MaterialButton buttonText="Search" onPress={() => this.props.navigation.navigate("main")}/>
                     }
-                    {/* <MaterialButton buttonText="Search" buttonStyles={{fontFamily: 'open-sans-bold'}} onPress={() => this.props.navigation.navigate("main")}/> */}
                 </View>
             </KeyboardAvoidingView>
         )

@@ -58,7 +58,7 @@ export class ReviewScreenFood extends React.Component {
         <Button
           title="Back To Map"
           icon={{ name: "my-location", color: "white" }}
-          buttonStyle={{ backgroundColor: "#E43F3F", height: 50 }}
+          buttonStyle={{ backgroundColor: "#87AFC7", height: 50 }}
           onPress={() => {
             this.props.navigation.navigate("map");
           }}
