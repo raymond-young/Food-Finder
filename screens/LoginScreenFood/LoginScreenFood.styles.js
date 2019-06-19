@@ -1,17 +1,18 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 export default StyleSheet.create({
     loginContainer: {
         flex: 1,
-        backgroundColor: "#87AFC7",
+        // backgroundColor: "#87AFC7",
+        backgroundColor: 'steelblue',
         padding: 20
     },
     headerContainer: {
-        flex: 3,
+        flex: 1,
         justifyContent: "center",
         alignItems: "center",
         padding: 20,
-        // backgroundColor: 'powderblue'
+        backgroundColor: 'powderblue'
     },
     headerText: {
         color: "#FFF",
@@ -20,31 +21,30 @@ export default StyleSheet.create({
         // fontFamily: "open-sans-bold",
         // Trebuchet MS,Arial,sans-serif
     },
-    formContainer: {
-        flex: 3,
-        // justifyContent: "center",
-        // backgroundColor: 'skyblue'
-    },
     imageStyle: {
         width: 150,
         height: 150
     },
-    buttonContainer: {
-        height: 60,
-        backgroundColor: "#FFF",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "rgba(0, 0, 0, 0.2)"
-    },
-    buttonText: {
-        color: "#FFF",
-        fontWeight: "700"
+    formContainer: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        backgroundColor: 'skyblue',
+        alignItems: "stretch",
     },
     inputContainer: {
         height: 60,
+        // width: 300,
         color: "#FFF",
         padding: 10,
         backgroundColor: "rgba(255, 255,255, 0.2)",
         marginBottom: 20
+    },
+    buttonStyles: {
+        borderRadius:25, 
+        position:'absolute', 
+        width:250, 
+        left: (Dimensions.get("window").width/2)-125-20
     }
+
 })

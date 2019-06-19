@@ -10,6 +10,7 @@ import { ReviewScreen } from "./screens/ReviewScreen/ReviewScreen";
 import { ReviewScreenFood } from "./screens/ReviewScreenFood/ReviewScreenFood";
 import { createBottomTabNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { AppProvider } from './AppProvider';
+import { StatusBar } from 'react-native';
 
 const TabNavigator = createBottomTabNavigator({
   map: MapScreenFood,
@@ -27,6 +28,11 @@ const MainNavigator = createSwitchNavigator({
 const AppContainer = createAppContainer(MainNavigator);
 
 export default class App extends React.Component {
+componentDidMount(){
+  StatusBar.setHidden(true);
+  // StatusBar.setTranslucent(true);
+}
+
   render() {
     return (
       <AppProvider>

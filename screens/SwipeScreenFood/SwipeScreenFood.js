@@ -93,7 +93,7 @@ export class SwipeScreenFood extends React.Component {
     const address = this.formatAddress(job.location);
     // const ratingImageSource = this.formatRating(job.rating);
     return (
-      <Card title={job.name} titleStyle = {{fontSize: 30}} containerStyle={{ height: 600, backgroundColor: "#87AFC7" }}>
+      <Card title={job.name} titleStyle={{fontSize: 30, fontWeight:'normal',fontFamily:'proxima-nova-soft-bold'}} containerStyle={{ height: 600, backgroundColor: "#87AFC7" }}>
         <View style={{ height: 300, marginBottom: 20 }}>
           <Image
             style={{height: 300, width: 300}}
@@ -110,10 +110,10 @@ export class SwipeScreenFood extends React.Component {
           {/* This is just a text number for the rating...
            <Text style={{fontSize: 20}}>{job.rating.toFixed(1)} / 5.0</Text> */}
           {this.formatRating(job.rating)}
-          <Text style={{fontSize: 20}}>Price: {job.price}</Text>
+          <Text style={{fontSize: 25, fontFamily:'proxima-nova-soft'}}>Price: {job.price}</Text>
         </View>
         <View>
-          <Text style={{fontSize: 15}}>{address}</Text>
+          <Text style={{fontSize: 20, fontFamily:'proxima-nova-soft'}}>{address}</Text>
         </View>
       </Card>
     );

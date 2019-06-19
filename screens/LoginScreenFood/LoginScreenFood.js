@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView } from "react-native";
+import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, Dimensions } from "react-native";
 import styles from "./LoginScreenFood.styles";
 import { MaterialButton } from "../../components/MaterialButton/MaterialButton";
 import { Button, Icon } from "react-native-elements";
@@ -31,7 +31,10 @@ export class LoginScreenFood extends React.Component {
         await Font.loadAsync({
           'open-sans': require('../../assets/fonts/OpenSans-LightItalic.ttf'),
           'open-sans-bold' : require('../../assets/fonts/OpenSans-Bold.ttf'),
+          'proxima-nova-soft' : require('../../assets/fonts/proxima-nova-soft/proxima-nova-soft-regular.ttf'),
+          'proxima-nova-soft-bold' : require('../../assets/fonts/proxima-nova-soft/proxima-nova-soft-bold.ttf'),
         });
+        console.log('Fonts loaded');
         this.setState({ fontLoaded: true });
         
         // Set up the autocomplete results
@@ -94,12 +97,13 @@ export class LoginScreenFood extends React.Component {
         // console.log('foundSuggestions:' + str); 
 
         return (
-            <KeyboardAvoidingView behavior="padding" style={styles.loginContainer}>
+            // <KeyboardAvoidingView behavior="padding" style={styles.loginContainer}>
+            <View style={styles.loginContainer}>
                 <View style={styles.headerContainer}>
                     <Image style={styles.imageStyle} source={require("../../assets/food-logo-2.png")}/>
                     {   // Only load this text once the 'open-sans' font has loaded. Note: you can use : null to not display the text
                         this.state.fontLoaded ? (
-                        <Text style={[styles.headerText, {fontFamily: 'open-sans'}]}>What shall we eat?</Text>
+                        <Text style={[styles.headerText, {fontFamily: 'proxima-nova-soft'}]}>What shall we eat?</Text>
                         ) : <Text style={styles.headerText}>What shall we eat?</Text>
                     }
                 </View> 
@@ -131,19 +135,20 @@ export class LoginScreenFood extends React.Component {
                     />
                     {
                         this.state.fontLoaded ? (
-                            <MaterialButton buttonText="Search" buttonStyles={{fontFamily: 'open-sans-bold'}} onPress={() => this.props.navigation.navigate("main")}/>
-                        ) : <MaterialButton buttonText="Search" onPress={() => this.props.navigation.navigate("main")}/>
+                            <MaterialButton buttonText="Search" buttonTextStyles={{fontFamily:'proxima-nova-soft-bold'}} buttonStyles={[styles.buttonStyles ]} onPress={() => this.props.navigation.navigate("main")}/>
+                        ) : <MaterialButton buttonText="Search" buttonStyles={[styles.buttonStyles]} onPress={() => this.props.navigation.navigate("main")}/>
                     }
                 </View>
-                <View>
+                {/* <View style={{backgroundColor: 'red'}}>
                     { foundSuggestions.length > 0 ? (
-                        <Text style={styles.infoText}>{ this.state.query }</Text>
+                        <Text>{ this.state.query }</Text>
                     ) : (
-                        <Text style={styles.infoText}>Enter the category name</Text>
+                        <Text>Enter the category name</Text>
                     )
                 }
+                </View> */}
                 </View>
-            </KeyboardAvoidingView>
+            //  </KeyboardAvoidingView>
         )
     }
 }
