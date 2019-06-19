@@ -45,6 +45,12 @@ export default StyleSheet.create({
         position:'absolute', 
         width:250, 
         left: (Dimensions.get("window").width/2)-125-20
+    },
+    autocompleteText: {
+        fontSize: 15,
+        paddingTop: 5,
+        paddingBottom: 5,
+        margin: 2,
     }
 
 })

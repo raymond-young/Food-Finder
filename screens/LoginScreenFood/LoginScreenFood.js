@@ -86,6 +86,7 @@ export class LoginScreenFood extends React.Component {
 
         // Return the filtered category array according the query from the input
         return categories.filter(category => category.title.search(regex) >= 0);
+        // return categories.filter(category => category.parent.search('food') >= 0);
     }
 
     render() {
@@ -123,12 +124,12 @@ export class LoginScreenFood extends React.Component {
                         // Onchange of the text changing the state of the query, which will trigger the findCategory method to show suggestions.
                         onChangeText={text => this.setState({ query: text})}
 
-                        placeholder="e.g. Delis"
+                        placeholder="e.g. pizza"
                         renderItem={({ title, alias }) => (
                             // You can change the view to want to show in suggestion from here.
                             <TouchableOpacity onPress={() => this.setState({ query: title })}>
-                                <Text>
-                                    {title} ({alias})
+                                <Text style={styles.autocompleteText}>
+                                    {title} 
                                 </Text>
                             </TouchableOpacity>
                         )}
@@ -139,15 +140,7 @@ export class LoginScreenFood extends React.Component {
                         ) : <MaterialButton buttonText="Search" buttonStyles={[styles.buttonStyles]} onPress={() => this.props.navigation.navigate("main")}/>
                     }
                 </View>
-                {/* <View style={{backgroundColor: 'red'}}>
-                    { foundSuggestions.length > 0 ? (
-                        <Text>{ this.state.query }</Text>
-                    ) : (
-                        <Text>Enter the category name</Text>
-                    )
-                }
-                </View> */}
-                </View>
+            </View>
             //  </KeyboardAvoidingView>
         )
     }
