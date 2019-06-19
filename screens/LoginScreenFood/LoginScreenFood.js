@@ -5,10 +5,13 @@ import { MaterialButton } from "../../components/MaterialButton/MaterialButton";
 import { Button, Icon } from "react-native-elements";
 import { Font } from 'expo';
 import Autocomplete from 'react-native-autocomplete-input';
+import axios from 'axios';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 export class LoginScreenFood extends React.Component {
+    _isMounted = false;
+
     constructor(props) {
         super(props);
 
@@ -20,55 +23,57 @@ export class LoginScreenFood extends React.Component {
     }
  
 
-    // When the LoginScreen loads, then load a custom font asynchronously.
     async componentDidMount() {
+        this._isMounted = true;
+
+        // When the LoginScreen loads, then load a custom font asynchronously.
         this.setState({})
         await Font.loadAsync({
           'open-sans': require('../../assets/fonts/OpenSans-LightItalic.ttf'),
           'open-sans-bold' : require('../../assets/fonts/OpenSans-Bold.ttf'),
         });
         this.setState({ fontLoaded: true });
+        
+        // Set up the autocomplete results
+        var categories = [];
+        const loadFromAPI = false; // T: Load results from external API, F: Load results from local file
+        if (loadFromAPI) {
+            try {
+                const response = await axios({
+                    method: 'get',
+                    url: 'https://api.yelp.com/v3/categories',
+                    headers: {
+                    Authorization: 'Bearer uEHV6xfRo8t08Mbssj-ISPyjjW5SAY3zBdcKBfJD_48V6vbZmdrceEQTAWgVhCVGvDNGsrXnGh2jgOeKe-oLWla_22118nZBWSG4BmLWtQIVEHUNlmG-4LAUkekGXXYx',
+                    },
+                });
+                categories = response.data.categories;
+                console.log("Autocomplete retrival SUCCESSFUL")
+            } catch (err) {
+                // If retrival doesn't work, then just load a saved version of the categories from file.
+                console.log(err);
+                console.log("Autocomplete retrieval UNSUCCESSFUL. Loading from file.")
+                categories = require('./Categories.json');
+            }
+        } else {
+            console.log("Loading autocomplete from file")
+            categories = require('./Categories.json');
+        }
 
-        const categories = [
-            {
-                "alias": "3dprinting",
-                "title": "3D Printing",
-                "parent_aliases": [
-                    "localservices"
-                ],
-                "country_whitelist": [],
-                "country_blacklist": []
-            },
-            {
-                "alias": "abruzzese",
-                "title": "Abruzzese",
-                "parent_aliases": [
-                    "italian"
-                ],
-                "country_whitelist": [
-                    "IT"
-                ],
-                "country_blacklist": []
-            },
-            {
-                "alias": "absinthebars",
-                "title": "Absinthe Bars",
-                "parent_aliases": [
-                    "bars"
-                ],
-                "country_whitelist": [
-                    "CZ"
-                ],
-                "country_blacklist": []
-            }]
-        this.setState({ categories });
+        // Change the state. Check if mounted to avoid warnings avoid setting state of unmounted components.
+        if (this._isMounted) {
+            this.setState({ categories });
+        }
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
     }
     
     // Method caled every time we change the value of the input
     getSuggestions(query) {
 
-        // If the query is null, then return blank
-        if (query === '') {
+        // If the query is empty or is too short, then return blank
+        if (query === '' || query.length < 2 ) {
             return []
         }
 
@@ -82,12 +87,11 @@ export class LoginScreenFood extends React.Component {
 
     render() {
         const { query } = this.state;
-        const foundCat = this.getSuggestions(query);
-        // Prettyprint Json
-        var str = JSON.stringify(foundCat, null, 2);
-        console.log('FOUNDCAT:' + str);
-
+        const foundSuggestions = this.getSuggestions(query);
         const comp = (a,b) => a.toLowerCase().trim() === b.toLowerCase().trim();
+
+        // var str = JSON.stringify(foundSuggestions, null, 2); // Print the suggestions
+        // console.log('foundSuggestions:' + str); 
 
         return (
             <KeyboardAvoidingView behavior="padding" style={styles.loginContainer}>
@@ -107,7 +111,7 @@ export class LoginScreenFood extends React.Component {
                         autoCorrect={false}
                         
                         // Data to show suggestion
-                        data={ (foundCat.length === 1 && comp(query, foundCat[0].title)) ? [] : foundCat}
+                        data={ (foundSuggestions.length === 1 && comp(query, foundSuggestions[0].title)) ? [] : foundSuggestions}
 
                         // Default value if you want to set something in input
                         defaultValue={query}
@@ -132,7 +136,7 @@ export class LoginScreenFood extends React.Component {
                     }
                 </View>
                 <View>
-                    { foundCat.length > 0 ? (
+                    { foundSuggestions.length > 0 ? (
                         <Text style={styles.infoText}>{ this.state.query }</Text>
                     ) : (
                         <Text style={styles.infoText}>Enter the category name</Text>
