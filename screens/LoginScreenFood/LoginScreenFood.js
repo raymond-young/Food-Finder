@@ -76,7 +76,7 @@ export class LoginScreenFood extends React.Component {
     getSuggestions(query) {
 
         // If the query is empty or is too short, then return blank
-        if (query === '' || query.length < 2 ) {
+        if (query === '' || query.length < 3 ) {
             return []
         }
 
@@ -86,7 +86,18 @@ export class LoginScreenFood extends React.Component {
 
         // Return the filtered category array according the query from the input
         return categories.filter(category => category.title.search(regex) >= 0);
-        // return categories.filter(category => category.parent.search('food') >= 0);
+
+        // TODO: Filtre out results which are not food / restaurant related. Category.parent_aliases?
+        // const regexFood = new RegExp(`food`, `i`);
+        
+        // var results=[];
+        // for (var i=0; i<categories.length; i++) {
+        //     console.log(categories[i]['title'] + ' AND '+ regex);
+        //     if (categories[i]['title'] == regex) {
+        //         results.push(categories[i]);
+        //     }
+        // }
+        // return results;
     }
 
     render() {
