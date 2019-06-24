@@ -94,17 +94,20 @@ There's also some issues with inheritance of fonts across components. Documentat
 Any images which have a source uri need to have a defined width and height. Local images don't need this definition.
 Documentation here: https://facebook.github.io/react-native/docs/image.html
 
+## Autocomplete
+The autocomplete onthe login screen uses the following library: https://github.com/mrlaessig/react-native-autocomplete-input.
+It relies on an initial call to the Yelp API to get the population to gather suggestions from (although the results are also saved to a file for the sake of preserving the number of API calls).
+
 ## Recordings
 - Recording 3: https://drive.google.com/open?id=1txfSOYJ0SEISZIXSrjn2yHym3fSo0yDt
 - Recording 2: https://drive.google.com/file/d/166PVgKSbP_xCqKVHsF-P9zq1hVSBcyDz/view
 - Recording 1: https://drive.google.com/open?id=1tCGRYzMrdPTV6VOKEscXOZvNNioi_KrM
 
 # TODO:
-- Styling of the bottom tab (add icons)
 - Restyling of the Login page (potentially separate the food login from the Job login)
+    - Potentially use this colour palette? https://www.color-hex.com/color-palette/1294 
 - Change any stray references to 'Job' to 'Restaurant' or 'Food' where appropriate.
 - Refactoring to have the Review, Swipe, and Map screens inherit from a parent class.
 - Look into using Redux for storing information.
 - Move Yelp auth to an environment file.
 - Allow searches to be customisable by user input.
-
