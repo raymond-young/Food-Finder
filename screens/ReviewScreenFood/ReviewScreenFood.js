@@ -4,6 +4,7 @@ import { AppContext } from "../../AppProvider";
 import { ScrollView } from "react-native-gesture-handler";
 import { Card, Button, Icon } from "react-native-elements";
 import { MapView } from "expo";
+import { styles } from "./ReviewScreenFood.styles"
 
 export class ReviewScreenFood extends React.Component {
   static navigationOptions = {
@@ -44,7 +45,7 @@ export class ReviewScreenFood extends React.Component {
           <Button
             title="Book Now"
             onPress={() => Linking.openURL(url)}
-            buttonStyle={{ backgroundColor: "#E43F3F" }}
+            buttonStyle={{ backgroundColor: "steelblue" }}
             disabled={is_closed}
           />
         </Card>
