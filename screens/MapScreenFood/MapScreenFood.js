@@ -77,6 +77,7 @@ export class MapScreenFood extends React.Component {
                 <Button
                   title="Find Food"
                   buttonStyle={styles.buttonStyles}
+                  icon={{ name: "search", color: "white" }}
                   onPress={async () => {
                       const jobs = await this.fetchJobs();
                       addResults(jobs);
