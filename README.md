@@ -1,5 +1,5 @@
 # Food Finder
-React Native project created using Expo.
+React Native mobile app which retrieves and displays restaurant information to help users decide where to eat.
 
 # Start
 ```
@@ -11,8 +11,6 @@ npm start
 - `Node.js` - An open-source, cross-platform JavaScript runtime environment
 - `npm` - A package manager for JavaScript
 - `expo` - A tool to help create a React Native Project
-
-React Native: Code is written in JavaScript and React Native compiles that into Java, Objective C or Swift Code depending on the environment.
 
 # TODO:
 - Restyling of the Login page (potentially separate the food login from the Job login)
