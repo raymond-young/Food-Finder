@@ -2,9 +2,10 @@
 React Native project created using Expo.
 
 # Start
-
-`npm install`
-`npm start`
+```
+npm install
+npm start
+```
 
 # Tools Used
 - `Node.js` - An open-source, cross-platform JavaScript runtime environment
