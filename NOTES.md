@@ -1,4 +1,6 @@
 # React Native Notes
+Code is written in JavaScript and React Native compiles that into Java, Objective C or Swift Code depending on the environment.
+
 ## Components
 Documentation here: https://reactjs.org/docs/react-component.html
 This is how we display things on our screen.
