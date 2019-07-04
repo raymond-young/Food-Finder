@@ -93,8 +93,8 @@ export class SwipeScreenFood extends React.Component {
     const address = this.formatAddress(job.location);
     // const ratingImageSource = this.formatRating(job.rating);
     return (
-      <Card title={job.name} titleStyle={{fontSize: 30, fontWeight:'normal',fontFamily:'proxima-nova-soft-bold'}} containerStyle={{ height: 600, backgroundColor: "#87AFC7", borderRadius:20}}>
-        <View style={{ height: 300, marginBottom: 20 }}>
+      <Card title={job.name} titleStyle={{fontSize: 30, fontWeight:'normal',fontFamily:'proxima-nova-soft-bold'}} containerStyle={{ height: 600, backgroundColor: "#87AFC7", borderRadius:10}}>
+        <View style={{ height: 300, marginBottom: 20, borderRadius:10 }}>
           <Image
             style={{height: 300, width: 300, borderRadius:20}}
             source={{ uri: '' + job.image_url }}

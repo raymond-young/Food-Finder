@@ -22,10 +22,10 @@ export class ReviewScreenFood extends React.Component {
       const { name, display_phone, url, is_closed, id, image_url } = job;
 
       return (
-        <Card title={name} titleStyle={{ fontSize: 15 }} key={id} containerStyle={{backgroundColor: "#87AFC7"}}>
+        <Card title={name} titleStyle={{ fontSize: 15 }} key={id} containerStyle={{backgroundColor: "#87AFC7", borderRadius:5}}>
           <View style={{ height: 200 }}>
             <Image
-            style={{height: 200, width: 300}}
+            style={{height: 200, width: 300, borderRadius:5}}
             source={{ uri: '' + image_url }}
             />
           </View>
