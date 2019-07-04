@@ -2,6 +2,9 @@
 # Created by https://www.gitignore.io/api/reactnative
 # Edit at https://www.gitignore.io/?templates=reactnative
 
+.env
+spare-parts/
+
 ### ReactNative ###
 # React Native Stack Base
 
