@@ -1,5 +1,5 @@
-# Workshop 4 Application
-React Native project created using Expo
+# Food Finder
+React Native project created using Expo.
 
 # Start
 
@@ -13,7 +13,7 @@ React Native project created using Expo
 
 React Native: Code is written in JavaScript and React Native compiles that into Java, Objective C or Swift Code depending on the environment.
 
-# React Native Stuff
+# React Native Notes
 ## Components
 Documentation here: https://reactjs.org/docs/react-component.html
 This is how we display things on our screen.
