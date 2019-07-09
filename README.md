@@ -17,5 +17,5 @@ npm start
     - Potentially use this colour palette? https://www.color-hex.com/color-palette/1294 
 - Refactoring to have the Review, Swipe, and Map screens inherit from a parent class.
 - Look into using Redux for storing information.
-- Move Yelp auth to an environment file.
+- Move Yelp auth to an environment file (there may be no simple way to do this with React Native)
 - Allow searches to be customisable by user input.
